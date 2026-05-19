@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thecha KOFFI · Transformation Digitale & Change Management</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23A8471A'/><text x='16' y='22' font-family='Georgia,serif' font-size='14' font-weight='700' fill='%23FFFCF8' text-anchor='middle' letter-spacing='1'>TK</text></svg>">
+<meta name="description" content="Thecha KOFFI — Consultante freelance en transformation digitale, change management et adoption utilisateur. Ex-KPMG, Capgemini, Deloitte. Disponible à Paris & Remote. TJM à partir de 550 €/j.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Thecha KOFFI">
+<meta name="keywords" content="consultante freelance, transformation digitale, change management, adoption utilisateur, PMO, ADKAR, Agile, Paris, remote">
+<meta property="og:title" content="Thecha KOFFI · Consultante Transformation Digitale & Change Management">
+<meta property="og:description" content="Consultante freelance spécialisée en change management, adoption digitale et pilotage de projets. Ex-KPMG, Capgemini, Deloitte. Disponible pour missions freelance.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thechakoffi.netlify.app">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Thecha KOFFI",
+  "jobTitle": "Consultante Transformation Digitale & Change Management",
+  "url": "https://thechakoffi.netlify.app",
+  "email": "thechakoffi@gmail.com",
+  "sameAs": ["https://www.linkedin.com/in/koffi-thecha/?locale=en"],
+  "knowsAbout": ["Transformation Digitale", "Change Management", "Adoption Utilisateur", "PMO", "ADKAR", "Agile"],
+  "alumniOf": [{"@type": "CollegeOrUniversity", "name": "EMLV"}, {"@type": "CollegeOrUniversity", "name": "IIM Digital School"}],
+  "worksFor": {"@type": "Organization", "name": "Freelance"}
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════
+   TOKENS
+══════════════════════════════════ */
+:root {
+  --terra:    #A8471A;
+  --terra-d:  #7E3411;
+  --terra-l:  #C86030;
+  --sand:     #E8C9A8;
+  --cream:    #F9F4EE;
+  --cream-d:  #F0E8DC;
+  --warm:     #FFFCF8;
+  --ink:      #18110C;
+  --ink-2:    #4A3728;
+  --ink-3:    #8C7060;
+  --border:   rgba(168,71,26,.13);
+  --border-s: rgba(168,71,26,.07);
+  --glow:     rgba(168,71,26,.10);
+  --r:        8px;
+  --r-lg:     14px;
+}
+
+/* ══════════════════════════════════
+   RESET & BASE
+══════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { text-wrap: balance; }
+
+/* ══════════════════════════════════
+   NAV
+══════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 400;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw;
+  background: rgba(249,244,238,.94);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-s);
+  transition: border-color .3s, box-shadow .3s;
+}
+nav.scrolled { border-color: var(--border); box-shadow: 0 2px 20px rgba(24,17,12,.06); }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo-txt {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem; color: var(--ink);
+  letter-spacing: -.01em; transition: color .2s;
+}
+.nav-logo-txt:hover { color: var(--terra); }
+.nav-logo-accent { color: var(--terra); }
+.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: .84rem; font-weight: 500; letter-spacing: .06em;
+  color: var(--ink-2); transition: color .2s;
+}
+.nav-links a:hover { color: var(--terra); }
+.nav-cta {
+  background: var(--terra) !important;
+  color: var(--warm) !important;
+  padding: .5rem 1.3rem; border-radius: var(--r);
+  font-size: .76rem !important; font-weight: 600 !important; letter-spacing: .05em;
+  transition: background .2s !important;
+  display: inline-flex; align-items: center; gap: .4rem;
+}
+.nav-cta:hover { background: var(--terra-d) !important; }
+.nav-cta svg { width: 13px; height: 13px; }
+.ham { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.ham span { display: block; width: 20px; height: 1.5px; background: var(--ink); transition: all .3s; }
+.ham.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+.ham.open span:nth-child(2) { opacity: 0; }
+.ham.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+.mob-drawer {
+  display: none; position: fixed; inset: 64px 0 0;
+  background: var(--cream); z-index: 350;
+  flex-direction: column; align-items: center; justify-content: center; gap: 2rem; padding: 2rem;
+}
+.mob-drawer.open { display: flex; }
+.mob-drawer a { font-family: 'DM Serif Display', serif; font-size: 1.9rem; color: var(--ink); transition: color .2s; }
+.mob-drawer a:hover { color: var(--terra); }
+.mob-drawer .mob-cta {
+  background: var(--terra); color: var(--warm) !important;
+  padding: .8rem 2.2rem; border-radius: var(--r);
+  font-family: 'Outfit', sans-serif; font-size: .9rem !important; font-weight: 600; margin-top: .5rem;
+}
+
+/* ══════════════════════════════════
+   SCROLL NAVIGATOR
+══════════════════════════════════ */
+#sn { position: fixed; right: 1.5rem; bottom: 2rem; z-index: 300; display: flex; flex-direction: column; gap: .5rem; align-items: center; }
+.sn-btn { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: background .2s, transform .2s, opacity .2s; box-shadow: 0 3px 16px rgba(24,17,12,.15); }
+.sn-down { background: var(--terra); color: var(--warm); }
+.sn-down:hover { background: var(--terra-d); transform: translateY(2px); }
+.sn-top { background: var(--warm); color: var(--terra); border: 1.5px solid var(--border); opacity: 0; pointer-events: none; }
+.sn-top.visible { opacity: 1; pointer-events: auto; }
+.sn-top:hover { background: var(--cream-d); transform: translateY(-2px); }
+.sn-btn svg { width: 16px; height: 16px; }
+
+/* ══════════════════════════════════
+   BUTTONS
+══════════════════════════════════ */
+.btn-p {
+  background: var(--terra); color: var(--warm);
+  padding: .85rem 2rem; border-radius: var(--r);
+  font-family: 'Outfit', sans-serif; font-size: .85rem; font-weight: 600; letter-spacing: .04em;
+  border: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: .5rem;
+  box-shadow: 0 4px 16px rgba(168,71,26,.25);
+  transition: background .2s, transform .18s, box-shadow .2s;
+}
+.btn-p:hover { background: var(--terra-d); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(168,71,26,.32); }
+.btn-o {
+  background: transparent; color: var(--terra);
+  padding: .85rem 2rem; border-radius: var(--r);
+  border: 1.5px solid var(--terra);
+  font-family: 'Outfit', sans-serif; font-size: .85rem; font-weight: 600; letter-spacing: .04em;
+  cursor: pointer; display: inline-flex; align-items: center; gap: .5rem;
+  transition: background .2s, color .2s;
+}
+.btn-o:hover { background: var(--terra); color: var(--warm); }
+.btn-p svg, .btn-o svg { width: 15px; height: 15px; flex-shrink: 0; }
+.btn-cv {
+  background: var(--ink); color: var(--warm);
+  padding: .85rem 2rem; border-radius: var(--r);
+  font-family: 'Outfit', sans-serif; font-size: .85rem; font-weight: 600; letter-spacing: .04em;
+  border: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: .5rem; justify-content: center;
+  box-shadow: 0 4px 16px rgba(24,17,12,.18);
+  transition: background .2s, transform .18s, box-shadow .2s; text-decoration: none;
+}
+.btn-cv:hover { background: var(--ink-2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(24,17,12,.24); }
+.btn-cv svg { width: 15px; height: 15px; flex-shrink: 0; }
+.btn-calendly {
+  background: transparent; color: var(--ink-3);
+  padding: .75rem 2rem; border-radius: var(--r);
+  border: 1px solid var(--border);
+  font-family: 'Outfit', sans-serif; font-size: .82rem; font-weight: 500;
+  cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; justify-content: center;
+  transition: border-color .2s, color .2s; text-decoration: none;
+}
+.btn-calendly:hover { border-color: var(--terra); color: var(--terra); }
+.btn-calendly svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* ══════════════════════════════════
+   SECTION TOKENS
+══════════════════════════════════ */
+section { padding: 6rem 5vw; }
+.s-eye {
+  font-size: .7rem; font-weight: 600; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--terra);
+  display: flex; align-items: center; gap: .7rem; margin-bottom: .9rem;
+}
+.s-eye::before { content: ''; width: 24px; height: 1.5px; background: var(--sand); border-radius: 2px; }
+.s-h {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+  letter-spacing: -.02em; line-height: 1.1;
+  color: var(--ink); margin-bottom: .9rem;
+}
+.s-h em { color: var(--terra); font-style: italic; }
+.s-sub { font-size: .93rem; color: var(--ink-3); line-height: 1.75; max-width: 520px; }
+
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+#hero {
+  min-height: 100dvh;
+  display: grid; grid-template-columns: 1.05fr 1fr;
+  align-items: center; padding: 6rem 5vw 4rem; gap: 4rem;
+  position: relative; overflow: hidden;
+}
+.hero-bg-orb { position: absolute; pointer-events: none; border-radius: 50%; }
+.orb-a { width: 52vw; max-width: 640px; height: 52vw; max-height: 640px; top: -18%; right: -6%; background: radial-gradient(ellipse, rgba(168,71,26,.09) 0%, transparent 65%); }
+.orb-b { width: 28vw; max-width: 360px; height: 28vw; max-height: 360px; bottom: 0; left: -3%; background: radial-gradient(ellipse, rgba(232,201,168,.14) 0%, transparent 70%); }
+.hero-l { position: relative; z-index: 1; }
+.avail-badge {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .38rem 1rem; border-radius: 30px;
+  background: rgba(168,71,26,.07); border: 1px solid rgba(168,71,26,.18);
+  font-size: .72rem; font-weight: 600; letter-spacing: .1em;
+  color: var(--terra); margin-bottom: 1.2rem; cursor: default;
+}
+.avail-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terra); animation: pulse-dot 2.4s ease-in-out infinite; }
+@keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.35;transform:scale(.7)} }
+.hero-context { font-size: .76rem; color: var(--ink-3); margin-bottom: 1.1rem; letter-spacing: .03em; }
+.hero-context strong { color: var(--ink-2); font-weight: 600; }
+.hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 6.5vw, 5.8rem); line-height: .93; letter-spacing: -.025em; color: var(--ink); margin-bottom: 1.2rem; white-space: nowrap; }
+.hero-name .n-last { color: var(--terra); }
+.hero-role { font-size: 1rem; color: var(--ink-2); line-height: 1.55; max-width: 430px; margin-bottom: .8rem; font-weight: 400; }
+.hero-role strong { color: var(--ink); font-weight: 600; }
+.hero-tagline { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--terra); font-style: italic; line-height: 1.55; max-width: 400px; margin-bottom: 2.2rem; padding-left: 1.1rem; border-left: 2px solid var(--sand); }
+.hero-actions { display: flex; gap: .9rem; flex-wrap: wrap; }
+.hero-r { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 1rem; }
+.metrics-g { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+.m-card { background: var(--warm); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.4rem 1.5rem; transition: border-color .22s, box-shadow .22s, transform .22s; cursor: default; }
+.m-card:hover { border-color: rgba(168,71,26,.3); box-shadow: 0 6px 22px var(--glow); transform: translateY(-2px); }
+.m-n { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: var(--terra); line-height: 1; margin-bottom: .3rem; }
+.m-l { font-size: .74rem; color: var(--ink-3); line-height: 1.4; font-weight: 500; }
+
+/* ══════════════════════════════════
+   POURQUOI ME CHOISIR
+══════════════════════════════════ */
+#why { background: var(--warm); padding: 5rem 5vw; }
+#why .s-eye { color: var(--terra); }
+#why .s-eye::before { background: var(--sand); }
+#why .s-h { color: var(--ink); }
+#why .s-h em { color: var(--terra); }
+.why-g {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 3rem;
+  border-top: 1px solid var(--border-s);
+}
+.why-item { padding: 2.4rem 2.2rem 2rem; border-right: 1px solid var(--border-s); position: relative; transition: background .25s; }
+.why-item:last-child { border-right: none; }
+.why-item:hover { background: var(--cream); }
+.why-num { font-family: 'DM Serif Display', serif; font-size: 3.5rem; color: rgba(168,71,26,.09); line-height: 1; margin-bottom: .9rem; letter-spacing: -.03em; }
+.why-item strong { display: block; font-family: 'DM Serif Display', serif; font-size: 1.02rem; font-weight: 400; color: var(--ink); margin-bottom: .6rem; line-height: 1.3; }
+.why-item p { font-size: .88rem; color: var(--ink-3); line-height: 1.8; }
+
+/* ══════════════════════════════════
+   À PROPOS
+══════════════════════════════════ */
+#apropos { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.ab-body { font-size: .96rem; color: var(--ink-2); line-height: 1.85; }
+.ab-body p + p { margin-top: 1.1rem; }
+.ab-body strong { color: var(--ink); font-weight: 600; }
+.info-stack { display: flex; flex-direction: column; gap: .75rem; }
+.ic { background: var(--warm); border: 1px solid var(--border-s); border-left: 2.5px solid var(--terra); border-radius: 0 var(--r) var(--r) 0; padding: 1rem 1.3rem; transition: box-shadow .2s; }
+.ic:hover { box-shadow: 0 3px 14px var(--glow); }
+.ic-l { font-size: .63rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--terra); margin-bottom: .3rem; }
+.ic-v { font-size: .9rem; color: var(--ink); font-weight: 500; }
+
+/* ══════════════════════════════════
+   PARCOURS
+══════════════════════════════════ */
+#parcours { background: var(--warm); }
+.parc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; }
+.sub-title { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.1rem; color: var(--terra); margin-bottom: 1.8rem; font-weight: 400; }
+.tl { position: relative; padding-left: .3rem; }
+.tl-line { position: absolute; left: 9px; top: 22px; bottom: 24px; width: 1px; background: linear-gradient(to bottom, var(--terra), transparent); }
+.tl-item { display: flex; gap: 1.6rem; margin-bottom: 2.2rem; position: relative; }
+.tl-dot { width: 20px; height: 20px; flex-shrink: 0; margin-top: 4px; border: 2px solid var(--terra); border-radius: 50%; background: var(--warm); z-index: 1; position: relative; display: flex; align-items: center; justify-content: center; }
+.tl-dot::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--terra); }
+.tl-yr { font-size: .68rem; font-weight: 700; letter-spacing: .13em; color: var(--sand); text-transform: uppercase; margin-bottom: .25rem; }
+.tl-co { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: .15rem; }
+.tl-role { font-size: .875rem; color: var(--terra); font-weight: 600; margin-bottom: .35rem; }
+.tl-desc { font-size: .875rem; color: var(--ink-3); line-height: 1.65; }
+.certs-list { display: flex; flex-direction: column; gap: .8rem; }
+.cert { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.3rem; background: var(--cream); border: 1px solid var(--border-s); border-radius: var(--r); transition: border-color .22s, box-shadow .22s, transform .22s; }
+.cert:hover { border-color: var(--border); box-shadow: 0 3px 14px var(--glow); transform: translateX(3px); }
+.cert-ico { width: 44px; height: 44px; border-radius: 9px; background: rgba(168,71,26,.09); flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--terra); transition: background .2s; overflow: hidden; }
+.cert-ico svg { width: 18px; height: 18px; }
+.cert-ico img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
+.cert:hover .cert-ico { background: rgba(168,71,26,.18); }
+.cert-name { font-size: .9rem; font-weight: 600; color: var(--ink); }
+.cert-org { font-size: .71rem; color: var(--ink-3); margin-top: .18rem; }
+.cert-wip { background: rgba(168,71,26,.03); border: 1px dashed rgba(168,71,26,.25); flex-wrap: wrap; }
+.cert-link { display: inline-flex; align-items: center; gap: .3rem; margin-top: .5rem; font-size: .76rem; font-weight: 600; color: var(--terra); letter-spacing: .03em; text-decoration: none; transition: gap .18s, color .18s; }
+.cert-link:hover { gap: .5rem; color: var(--terra-d); }
+.cert-link svg { width: 11px; height: 11px; }
+.cert-prog { height: 3px; background: var(--cream-d); border-radius: 2px; margin-top: .5rem; overflow: hidden; flex-basis: 100%; margin-left: 3rem; }
+.cert-prog-bar { height: 100%; background: linear-gradient(90deg, var(--terra), var(--sand)); border-radius: 2px; animation: pgrow 1.6s ease forwards; }
+@keyframes pgrow { from { width: 0%; } }
+.langs { display: flex; gap: .9rem; margin-top: 1.8rem; }
+.lang { flex: 1; background: var(--cream); border: 1px solid var(--border-s); border-radius: var(--r); padding: .9rem 1.1rem; display: flex; align-items: center; gap: .75rem; transition: border-color .2s; }
+.lang:hover { border-color: var(--border); }
+.lang-f { font-size: 1.4rem; }
+.lang-n { font-size: .86rem; font-weight: 600; color: var(--ink); }
+.lang-l { font-size: .7rem; color: var(--ink-3); margin-top: .12rem; }
+
+/* ══════════════════════════════════
+   PROJETS
+══════════════════════════════════ */
+#projets { background: var(--cream); }
+.proj-g { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-bottom: 2.5rem; }
+.proj-c { background: var(--warm); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; transition: border-color .25s, box-shadow .25s, transform .25s; display: flex; flex-direction: column; }
+.proj-c:hover { border-color: rgba(168,71,26,.28); box-shadow: 0 8px 32px var(--glow); transform: translateY(-4px); }
+.proj-thumb { height: 190px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: var(--cream-d); }
+.proj-thumb-img { background-size: cover; background-position: center; }
+.proj-thumb-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(24,17,12,.08) 0%, rgba(24,17,12,.48) 100%); z-index: 1; }
+.proj-cat { position: absolute; top: .9rem; left: .9rem; z-index: 2; font-size: .6rem; font-weight: 700; letter-spacing: .1em; padding: .28rem .7rem; border-radius: 5px; background: rgba(255,252,248,.92); color: var(--terra); border: 1px solid var(--border); }
+.proj-vis-meta { position: absolute; bottom: .9rem; right: .9rem; z-index: 2; font-size: .6rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .25rem .65rem; border-radius: 5px; background: rgba(255,252,248,.88); color: var(--ink-2); }
+.proj-vis-meta.dark { background: rgba(24,17,12,.5); color: var(--sand); border: 1px solid rgba(232,201,168,.2); }
+/* fallback gradient per card */
+.proj-thumb-v1 { background-color: #EDE3D6; }
+.proj-thumb-v2 { background-color: #E8DDD4; }
+.proj-thumb-v3 { background-color: #2A1E15; }
+.proj-thumb-v4 { background: linear-gradient(135deg, #1C2340 0%, #2D3561 100%); }
+.proj-body { padding: 1.4rem; display: flex; flex-direction: column; flex: 1; }
+.proj-body h3 { font-family: 'DM Serif Display', serif; font-size: .98rem; color: var(--ink); margin-bottom: .4rem; line-height: 1.3; }
+.proj-body p { font-size: .875rem; color: var(--ink-3); line-height: 1.65; }
+.proj-body-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
+.proj-tag { font-size: .62rem; font-weight: 600; letter-spacing: .05em; padding: .2rem .6rem; border-radius: 5px; background: var(--cream-d); color: var(--ink-3); border: 1px solid var(--border-s); }
+.proj-cs-link { display: inline-flex; align-items: center; gap: .35rem; margin-top: auto; padding-top: 1.1rem; font-size: .82rem; font-weight: 600; color: var(--terra); letter-spacing: .03em; transition: gap .2s, color .2s; }
+.proj-cs-link:hover { gap: .6rem; color: var(--terra-d); }
+.proj-cs-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+/* docs */
+.docs-hd { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.15rem; color: var(--ink); margin-bottom: 1.2rem; padding-bottom: .9rem; border-bottom: 1px solid var(--border-s); }
+.docs-g { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.doc-c { background: var(--warm); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.4rem; display: flex; gap: 1rem; align-items: flex-start; transition: border-color .22s, box-shadow .22s, transform .22s; cursor: pointer; }
+.doc-c:hover { border-color: rgba(168,71,26,.28); box-shadow: 0 5px 22px var(--glow); transform: translateY(-2px); }
+.doc-ico { width: 40px; height: 40px; border-radius: 9px; background: rgba(168,71,26,.09); flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--terra); transition: background .2s; }
+.doc-ico svg { width: 18px; height: 18px; }
+.doc-c:hover .doc-ico { background: rgba(168,71,26,.18); }
+.doc-t { font-size: .62rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--sand); margin-bottom: .25rem; }
+.doc-c h4 { font-size: .9rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: .25rem; }
+.doc-c p { font-size: .85rem; color: var(--ink-3); line-height: 1.55; }
+.doc-acts { display: flex; gap: .45rem; margin-top: .8rem; }
+.dbtn { font-size: .67rem; font-weight: 600; letter-spacing: .06em; padding: .28rem .75rem; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: .3rem; transition: background .18s, color .18s, border-color .18s; }
+.dbtn svg { width: 11px; height: 11px; }
+.dbtn-p { background: var(--terra); color: var(--warm); border: 1px solid var(--terra); }
+.dbtn-p:hover { background: var(--terra-d); border-color: var(--terra-d); }
+.dbtn-o { background: transparent; color: var(--terra); border: 1px solid var(--border); }
+.dbtn-o:hover { border-color: var(--terra); background: rgba(168,71,26,.05); }
+
+/* Modal */
+#modal { display: none; position: fixed; inset: 0; z-index: 600; background: rgba(24,17,12,.55); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 2rem; }
+#modal.open { display: flex; }
+.modal-box { background: var(--warm); border-radius: 16px; width: 100%; max-width: 680px; max-height: 80vh; display: flex; flex-direction: column; box-shadow: 0 28px 80px rgba(24,17,12,.28); overflow: hidden; }
+.modal-hd { padding: 1.3rem 1.6rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-s); }
+.modal-hd h3 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--ink); }
+.modal-x { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--ink-3); transition: background .2s, color .2s; font-size: 1.1rem; }
+.modal-x:hover { background: var(--terra); color: var(--warm); border-color: var(--terra); }
+.modal-bd { flex: 1; overflow-y: auto; padding: 1.8rem 1.6rem; }
+.modal-prev { background: var(--cream-d); border-radius: 10px; padding: 2.2rem; text-align: center; border: 1px dashed var(--border); }
+.modal-prev p { font-size: .88rem; color: var(--ink-3); line-height: 1.7; margin-bottom: 1.1rem; }
+
+/* ══════════════════════════════════
+   TÉMOIGNAGES
+══════════════════════════════════ */
+#temoignages { background: var(--warm); }
+.temo-g { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.8rem; }
+.temo { background: var(--cream); border: 1px solid var(--border-s); border-radius: var(--r-lg); padding: 2rem; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: border-color .25s, box-shadow .25s, transform .25s; }
+.temo::before { content: '\201C'; position: absolute; top: -.6rem; right: 1rem; font-family: 'DM Serif Display', serif; font-size: 6rem; color: rgba(168,71,26,.07); line-height: 1; pointer-events: none; }
+.temo:hover { border-color: var(--border); box-shadow: 0 6px 28px var(--glow); transform: translateY(-3px); }
+.temo-q { font-family: 'DM Serif Display', serif; font-style: italic; font-size: .98rem; color: var(--ink); line-height: 1.5; margin-bottom: 1rem; }
+.temo-body { font-size: .875rem; color: var(--ink-3); line-height: 1.75; flex: 1; margin-bottom: 1.3rem; }
+.temo-ft { display: flex; align-items: center; gap: .85rem; padding-top: 1.1rem; border-top: 1px solid var(--border-s); }
+.temo-av { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, var(--terra), var(--sand)); display: flex; align-items: center; justify-content: center; font-size: .64rem; font-weight: 700; color: var(--warm); flex-shrink: 0; letter-spacing: .04em; }
+.temo-src { font-size: .8rem; color: var(--ink-3); line-height: 1.35; }
+.temo-src strong { display: block; font-size: .84rem; color: var(--ink); font-weight: 600; margin-bottom: .08rem; }
+
+/* ══════════════════════════════════
+   CONTACT
+══════════════════════════════════ */
+#contact { background: var(--cream); }
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; margin-top: 2.8rem; }
+.c-headline { font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem, 2.8vw, 2.5rem); color: var(--ink); line-height: 1.2; margin-bottom: 1.3rem; letter-spacing: -.02em; }
+.c-headline em { color: var(--terra); font-style: italic; }
+.status-wrap { margin-bottom: 1.8rem; }
+.status-label { font-size: .68rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .6rem; }
+.status-opts { display: flex; flex-direction: column; gap: .5rem; }
+.status-opt { display: flex; align-items: center; gap: .75rem; padding: .75rem 1rem; border-radius: var(--r); border: 1.5px solid var(--border-s); background: var(--warm); cursor: pointer; transition: border-color .2s, background .2s; font-size: .875rem; color: var(--ink-2); font-weight: 500; }
+.status-opt.active { border-color: var(--terra); background: rgba(168,71,26,.05); }
+.status-opt .s-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.status-opt:nth-child(1) .s-dot { background: #22C55E; }
+.status-opt:nth-child(2) .s-dot { background: var(--terra); }
+.avail-list { margin-bottom: 1.6rem; }
+.avail-item { display: flex; align-items: center; gap: .7rem; padding: .65rem 0; border-bottom: 1px solid var(--border-s); font-size: .9rem; color: var(--ink-2); }
+.avail-item::before { content: '→'; color: var(--terra); font-weight: 600; flex-shrink: 0; }
+.tarif-note { font-size: .76rem; color: var(--ink-3); font-style: italic; padding-top: .6rem; }
+.hors-scope { margin-top: 1.6rem; }
+.hs-label { font-size: .63rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .6rem; }
+.hs-item { display: flex; align-items: center; gap: .7rem; padding: .55rem 0; border-bottom: 1px solid var(--border-s); font-size: .875rem; color: var(--ink-3); }
+.hs-item::before { content: '✕'; color: rgba(140,112,96,.45); font-size: .7rem; flex-shrink: 0; }
+.c-items { display: flex; flex-direction: column; gap: .8rem; }
+.c-item { display: flex; gap: .9rem; align-items: center; padding: 1rem 1.3rem; background: var(--warm); border: 1px solid var(--border-s); border-radius: var(--r); text-decoration: none; color: inherit; transition: border-color .22s, box-shadow .22s, transform .22s; }
+.c-item:hover { border-color: var(--border); box-shadow: 0 3px 14px var(--glow); transform: translateX(3px); }
+.c-ic { width: 38px; height: 38px; border-radius: 9px; background: rgba(168,71,26,.08); flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--terra); transition: background .22s; }
+.c-ic svg { width: 17px; height: 17px; }
+.c-item:hover .c-ic { background: rgba(168,71,26,.17); }
+.c-lb { font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: .18rem; }
+.c-vl { font-size: .85rem; color: var(--ink); font-weight: 500; }
+.cta-blk { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .8rem; }
+
+/* ══════════════════════════════════
+   TK AVATAR
+══════════════════════════════════ */
+.tk-avatar {
+  width: 76px; height: 76px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--terra) 0%, var(--sand) 100%);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 8px 24px rgba(168,71,26,.22);
+  flex-shrink: 0;
+}
+.tk-avatar-txt {
+  font-family: 'DM Serif Display', serif; font-size: 1.7rem;
+  color: var(--warm); letter-spacing: .04em; line-height: 1;
+}
+
+/* ══════════════════════════════════
+   PROCESSUS
+══════════════════════════════════ */
+#processus { background: var(--cream); }
+.process-g {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 3rem; position: relative;
+}
+.process-step {
+  padding: 2.2rem 2rem; position: relative;
+}
+.process-step::after {
+  content: '→'; position: absolute; right: -.65rem; top: 2.4rem;
+  color: var(--sand); font-size: 1.1rem; z-index: 1; pointer-events: none;
+}
+.process-step:last-child::after { display: none; }
+.process-num {
+  font-size: .68rem; font-weight: 700; letter-spacing: .18em;
+  color: var(--terra); margin-bottom: .9rem;
+}
+.process-ico {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(168,71,26,.09);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--terra); margin-bottom: 1.1rem; transition: background .2s;
+}
+.process-ico svg { width: 19px; height: 19px; }
+.process-step:hover .process-ico { background: rgba(168,71,26,.17); }
+.process-step h3 {
+  font-family: 'DM Serif Display', serif; font-size: 1rem;
+  color: var(--ink); margin-bottom: .55rem; font-weight: 400; line-height: 1.25;
+}
+.process-step p { font-size: .875rem; color: var(--ink-3); line-height: 1.78; }
+
+/* ══════════════════════════════════
+   FAQ
+══════════════════════════════════ */
+#faq { background: var(--warm); }
+.faq-list { margin-top: 2.5rem; max-width: 740px; }
+.faq-item { border-bottom: 1px solid var(--border-s); }
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.35rem 0; cursor: pointer; gap: 1rem;
+  font-size: 1rem; font-weight: 600; color: var(--ink); transition: color .2s;
+  user-select: none;
+}
+.faq-q:hover { color: var(--terra); }
+.faq-ico {
+  width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+  border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--terra); font-size: .9rem; font-weight: 400;
+  transition: transform .32s, background .22s, border-color .22s, color .22s;
+}
+.faq-item.open .faq-ico { transform: rotate(45deg); background: var(--terra); border-color: var(--terra); color: var(--warm); }
+.faq-a {
+  font-size: .92rem; color: var(--ink-3); line-height: 1.82;
+  max-height: 0; overflow: hidden;
+  transition: max-height .38s ease, padding-bottom .38s;
+}
+.faq-a strong { color: var(--ink-2); font-weight: 600; }
+.faq-item.open .faq-a { max-height: 220px; padding-bottom: 1.5rem; }
+
+/* ══════════════════════════════════
+   MICRO-CTA
+══════════════════════════════════ */
+.sec-cta {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem 2rem; margin-top: 2.8rem;
+  background: rgba(168,71,26,.05); border: 1px solid var(--border);
+  border-radius: var(--r-lg); gap: 1.5rem; flex-wrap: wrap;
+}
+.sec-cta-txt { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.05rem; color: var(--ink); line-height: 1.3; }
+.sec-cta-txt span { display: block; font-family: 'Outfit', sans-serif; font-style: normal; font-size: .78rem; color: var(--ink-3); margin-top: .3rem; font-weight: 400; }
+
+/* ══════════════════════════════════
+   AVIS
+══════════════════════════════════ */
+#avis { background: var(--warm); }
+.avis-g { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 2.8rem; }
+.avis-intro { font-size: .95rem; color: var(--ink-2); line-height: 1.8; margin-bottom: 1.6rem; }
+.stars { display: flex; gap: .35rem; margin-bottom: 1.4rem; }
+.star { width: 34px; height: 34px; border-radius: 7px; border: 1.5px solid var(--border-s); background: var(--cream); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1rem; transition: border-color .2s, background .2s, transform .15s; }
+.star:hover, .star.on { border-color: var(--terra); transform: scale(1.1); }
+.star.on { background: var(--terra); color: var(--warm); }
+.fg { margin-bottom: 1rem; }
+.fg label { display: block; font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin-bottom: .45rem; }
+.fg input, .fg textarea { width: 100%; padding: .8rem 1rem; border: 1.5px solid var(--border); border-radius: var(--r); background: var(--cream); color: var(--ink); font-family: 'Outfit', sans-serif; font-size: .9rem; transition: border-color .2s, box-shadow .2s; outline: none; resize: vertical; }
+.fg input:focus, .fg textarea:focus { border-color: var(--terra); box-shadow: 0 0 0 3px rgba(168,71,26,.09); }
+.fg textarea { min-height: 100px; }
+.form-note { font-size: .72rem; color: var(--ink-3); margin-top: .7rem; font-style: italic; line-height: 1.5; }
+#avis-ok { display: none; background: rgba(168,71,26,.07); border: 1px solid rgba(168,71,26,.22); border-radius: var(--r); padding: 1rem 1.3rem; font-size: .86rem; color: var(--terra); margin-top: .9rem; line-height: 1.6; }
+.avis-r { display: flex; flex-direction: column; gap: .75rem; }
+.avis-card { background: var(--cream); border: 1px solid var(--border-s); border-left: 2.5px solid var(--terra); border-radius: 0 var(--r) var(--r) 0; padding: 1rem 1.3rem; }
+.avis-card h4 { font-size: .8rem; font-weight: 600; color: var(--ink); margin-bottom: .25rem; }
+.avis-card p { font-size: .84rem; color: var(--ink-3); line-height: 1.6; }
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer { background: var(--ink); padding: 2rem 5vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.ft-logo { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--warm); letter-spacing: -.01em; }
+.ft-logo span { color: var(--sand); }
+footer p { font-size: .72rem; color: var(--ink-3); }
+.ft-links { display: flex; gap: 1.4rem; }
+.ft-links a { font-size: .72rem; color: var(--ink-3); text-decoration: none; transition: color .2s; }
+.ft-links a:hover { color: var(--sand); }
+
+/* ══════════════════════════════════
+   SKIP LINK (accessibilité)
+══════════════════════════════════ */
+.skip-link {
+  position: absolute; top: -100%; left: 1rem;
+  background: var(--terra); color: var(--warm);
+  padding: .75rem 1.5rem; font-weight: 600; font-size: .9rem;
+  border-radius: 0 0 var(--r) var(--r); z-index: 999;
+  text-decoration: none; transition: top .2s;
+}
+.skip-link:focus { top: 0; outline: 3px solid var(--sand); outline-offset: 2px; }
+
+/* ══════════════════════════════════
+   FADE IN
+══════════════════════════════════ */
+.fi { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.fi.v { opacity: 1; transform: none; }
+
+/* ══════════════════════════════════
+   ACCESSIBILITÉ & NUMÉRIQUE RESPONSABLE
+══════════════════════════════════ */
+:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; border-radius: 3px; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .fi { opacity: 1; transform: none; }
+}
+
+/* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+@media (max-width: 1024px) {
+  #hero { grid-template-columns: 1fr; padding: 5.5rem 5vw 3.5rem; gap: 2.5rem; }
+  .hero-r { display: none; }
+  #apropos { grid-template-columns: 1fr; gap: 2.5rem; }
+  .parc-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .proj-g { grid-template-columns: 1fr 1fr; }
+  .temo-g { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .docs-g { grid-template-columns: 1fr; }
+  .avis-g { grid-template-columns: 1fr; gap: 3rem; }
+  .why-g { grid-template-columns: 1fr 1fr; border-top: none; }
+  .why-item { border-top: 1px solid var(--border-s); }
+  .why-item:nth-child(even) { border-right: none; }
+  .process-g { grid-template-columns: 1fr 1fr; }
+  .process-step::after { display: none; }
+  footer { flex-direction: column; text-align: center; }
+  .nav-links { display: none; }
+  .ham { display: flex; }
+}
+@media (max-width: 640px) {
+  section { padding: 4.5rem 5vw; }
+  #hero { padding-top: 5rem; }
+  .hero-name { white-space: normal; }
+  .proj-g { grid-template-columns: 1fr; }
+  .why-g { grid-template-columns: 1fr; }
+  .why-item { border-right: none; border-top: 1px solid var(--border-s); padding: 1.8rem 1rem; }
+  .process-g { grid-template-columns: 1fr; }
+  .process-step { padding: 1.6rem 1rem; }
+  #sn { right: 1rem; bottom: 1.5rem; }
+}
+</style>
+</head>
+<body>
+<a href="#hero" class="skip-link">Aller au contenu principal</a>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-txt">Thecha <span class="nav-logo-accent">KOFFI</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#processus">Méthode</a></li>
+    <li>
+      <a href="#contact" class="nav-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Discuter d'une mission
+      </a>
+    </li>
+  </ul>
+  <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mob-drawer" id="mob">
+  <a href="#apropos" onclick="closeMob()">À propos</a>
+  <a href="#parcours" onclick="closeMob()">Parcours</a>
+  <a href="#projets" onclick="closeMob()">Projets</a>
+  <a href="#temoignages" onclick="closeMob()">Témoignages</a>
+  <a href="#processus" onclick="closeMob()">Méthode</a>
+  <a href="#contact" onclick="closeMob()" class="mob-cta btn-p">Discuter d'une mission</a>
+</div>
+
+<!-- SCROLL NAV -->
+<div id="sn">
+  <button class="sn-btn sn-top" id="sn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Haut de page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+  <button class="sn-btn sn-down" id="sn-dn" aria-label="Section suivante">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+</div>
+
+<!-- MODAL -->
+<div id="modal">
+  <div class="modal-box">
+    <div class="modal-hd">
+      <h3 id="m-title"></h3>
+      <button class="modal-x" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-bd">
+      <div class="modal-prev">
+        <p id="m-desc"></p>
+        <a id="m-link" href="#" target="_blank" class="btn-p" style="display:inline-flex;margin:0 auto">Ouvrir dans un nouvel onglet ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg-orb orb-a"></div>
+  <div class="hero-bg-orb orb-b"></div>
+  <div class="hero-l">
+    <div class="avail-badge" id="hero-badge">
+      <span class="avail-dot"></span>
+      <span id="badge-txt">Disponible pour missions freelance</span>
+    </div>
+    <p class="hero-context">Ancienne consultante <strong>KPMG · Capgemini · Deloitte</strong></p>
+    <h1 class="hero-name">Thecha <span class="n-last">KOFFI</span></h1>
+    <p class="hero-role"><strong>Consultante Transformation Digitale & Change&nbsp;Management</strong> · Freelance</p>
+    <p class="hero-tagline">Je structure vos transformations et accélère l'adoption de vos outils.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-p">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Discuter d'une mission
+      </a>
+      <a href="#projets" class="btn-o">Voir mes projets</a>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="metrics-g">
+      <div class="m-card fi"><div class="m-n">5+</div><div class="m-l">Années d'expérience</div></div>
+      <div class="m-card fi"><div class="m-n">4</div><div class="m-l">Grands groupes accompagnés</div></div>
+      <div class="m-card fi"><div class="m-n">8</div><div class="m-l">Projets de transformation</div></div>
+      <div class="m-card fi"><div class="m-n">3+</div><div class="m-l">Environnements internationaux</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ POURQUOI ME CHOISIR ═══ -->
+<section id="why">
+  <p class="s-eye fi">Pourquoi me choisir</p>
+  <h2 class="s-h fi">Ce qui me <em>distingue</em></h2>
+  <div class="why-g">
+    <div class="why-item fi">
+      <div class="why-num">01</div>
+      <strong>Terrains exigeants, livrables mesurables</strong>
+      <p>Missionnée chez KPMG, Capgemini et Deloitte sur des programmes à fort enjeu. Chaque livrable est conçu pour tenir dans la durée, pas pour cocher une case.</p>
+    </div>
+    <div class="why-item fi">
+      <div class="why-num">02</div>
+      <strong>Du cadrage stratégique au go-live terrain</strong>
+      <p>Pilotage de programmes multi-pays de bout en bout : gouvernance, coordination internationale, reporting et gestion des risques en temps réel.</p>
+    </div>
+    <div class="why-item fi">
+      <div class="why-num">03</div>
+      <strong>Une adoption qui dure après la mission</strong>
+      <p>Mes stratégies change sont encore utilisées longtemps après la fin des contrats, parce qu'elles sont construites avec les équipes, pas imposées de l'extérieur.</p>
+    </div>
+    <div class="why-item fi">
+      <div class="why-num">04</div>
+      <strong>Intégration rapide & efficacité</strong>
+      <p>Adaptation accélérée aux contextes métiers et IT, avec une contribution opérationnelle dès les premières phases de mission.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ À PROPOS ═══ -->
+<section id="apropos">
+  <div class="fi">
+    <div class="tk-avatar"><span class="tk-avatar-txt">TK</span></div>
+    <p class="s-eye">À propos</p>
+    <h2 class="s-h">L'humain au cœur<br>du <em>digital</em></h2>
+    <div class="ab-body" style="margin-top:1.3rem">
+      <p>Consultante freelance avec <strong>5+ ans d'expérience</strong> dans des grands groupes internationaux, j'interviens sur des programmes de transformation digitale, de déploiement d'outils et de conduite du changement à fort enjeu.</p>
+      <p>Ma singularité : je connecte la vision stratégique à l'opérationnel terrain. Je pilote, je structure et je m'assure que les équipes adoptent réellement les changements, pas seulement sur le papier.</p>
+    </div>
+    <div style="margin-top:1.8rem">
+      <a href="#contact" class="btn-p">Parlons de votre projet →</a>
+    </div>
+  </div>
+  <div class="info-stack fi">
+    <div class="ic"><div class="ic-l">Disponibilité</div><div class="ic-v">Freelance · Missions courtes & longues durées</div></div>
+    <div class="ic"><div class="ic-l">Localisation</div><div class="ic-v">Paris & Remote · International</div></div>
+    <div class="ic"><div class="ic-l">Secteurs</div><div class="ic-v">Finance · Industrie · Pharma · Services</div></div>
+    <div class="ic"><div class="ic-l">Méthodes & outils</div><div class="ic-v">Jira · Confluence · ADKAR · Agile</div></div>
+  </div>
+</section>
+
+<!-- ═══ PARCOURS ═══ -->
+<section id="parcours">
+  <p class="s-eye fi">Parcours</p>
+  <h2 class="s-h fi">Expériences &<br><em>formations</em></h2>
+  <div class="parc-layout">
+    <div class="fi">
+      <p class="sub-title">Expériences professionnelles</p>
+      <div class="tl">
+        <div class="tl-line"></div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <p class="tl-yr">2024</p>
+            <p class="tl-co">KPMG</p>
+            <p class="tl-role">Consultante Transformation Digitale</p>
+            <p class="tl-desc">PMO & transformation, coordination internationale sur programmes multi-pays.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div>
+            <p class="tl-yr">2022</p>
+            <p class="tl-co">Capgemini</p>
+            <p class="tl-role">Consultante <span lang="en">Change Management</span></p>
+            <p class="tl-desc">Pilotage et gouvernance de projets de transformation digitale en environnement grand compte.</p>
+          </div>
+        </div>
+        <div class="tl-item" style="margin-bottom:0">
+          <div class="tl-dot"></div>
+          <div>
+            <p class="tl-yr">2020</p>
+            <p class="tl-co">Deloitte</p>
+            <p class="tl-role">Chef de Projet Digital Webmaster</p>
+            <p class="tl-desc">Pilotage et optimisation des environnements intranet/extranet (AEM, SharePoint), coordination des équipes métiers et techniques, et amélioration de l'expérience utilisateur digitale.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fi">
+      <p class="sub-title">Formation</p>
+      <div class="certs-list" style="margin-bottom:2rem">
+        <div class="cert">
+          <div class="cert-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <div class="cert-name">Master Bi-cursus Marketing Digital & Data Analytics</div>
+            <div class="cert-org">EMLV · IIM Digital School</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="sub-title">Certifications obtenues</p>
+      <div class="certs-list" style="margin-bottom:2rem">
+        <div class="cert">
+          <div class="cert-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
+          </div>
+          <div style="flex:1">
+            <div class="cert-name">Réussir le Changement</div>
+            <div class="cert-org">ESSEC Business School · Coursera · Oct. 2022</div>
+            <a href="certifications/reussir-le-changement.jpeg" target="_blank" rel="noopener" class="cert-link">Voir le certificat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          </div>
+          <div style="flex:1">
+            <div class="cert-name" lang="en">Green IT Essentials</div>
+            <div class="cert-org">Capgemini University · Avr. 2024</div>
+            <a href="certifications/green-it-essentials.pdf" target="_blank" rel="noopener" class="cert-link">Voir le certificat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+          </div>
+          <div style="flex:1">
+            <div class="cert-name" lang="en">Business Analyst Certification</div>
+            <div class="cert-org">Capgemini · Business Analysis Global Community · Sep. 2023</div>
+            <a href="certifications/business-analyst.pdf" target="_blank" rel="noopener" class="cert-link">Voir le certificat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <p class="sub-title">En cours de certification</p>
+      <div class="certs-list">
+        <div class="cert cert-wip">
+          <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <div style="flex:1"><div class="cert-name">PSPO I · <span lang="en">Professional Scrum Product Owner</span></div><div class="cert-org">Scrum.org · Agilité & pilotage</div></div>
+          <div class="cert-prog" style="flex-basis:100%;margin-left:3.3rem"><div class="cert-prog-bar" style="width:15%"></div></div>
+        </div>
+        <div class="cert cert-wip">
+          <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+          <div style="flex:1"><div class="cert-name" lang="en">Prompt Engineering Foundation</div><div class="cert-org">IA générative & ingénierie de prompts</div></div>
+          <div class="cert-prog" style="flex-basis:100%;margin-left:3.3rem"><div class="cert-prog-bar" style="width:15%"></div></div>
+        </div>
+      </div>
+
+      <div class="langs">
+        <div class="lang"><span class="lang-f">🇫🇷</span><div><div class="lang-n">Français</div><div class="lang-l">Langue maternelle</div></div></div>
+        <div class="lang"><span class="lang-f">🇬🇧</span><div><div class="lang-n">Anglais</div><div class="lang-l">Courant · International</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- micro-CTA after parcours -->
+<div class="sec-cta fi" style="margin: -2rem 5vw 0">
+  <div class="sec-cta-txt">
+    Un profil qui correspond à votre besoin ?
+    <span>Change Management · Adoption Utilisateur · Transformation Digitale · Disponible rapidement</span>
+  </div>
+  <a href="#contact" class="btn-p" style="white-space:nowrap">Discuter d'une mission →</a>
+</div>
+
+<!-- ═══ PROJETS ═══ -->
+<section id="projets">
+  <p class="s-eye fi">Projets</p>
+  <h2 class="s-h fi">Missions &<br><em>réalisations</em></h2>
+  <p class="s-sub fi" style="margin-top:.3rem;margin-bottom:2.2rem">Des projets réels, des environnements complexes. Chaque case study détaille la démarche et les résultats.</p>
+
+  <div class="proj-g">
+
+    <!-- Mission 1 — PLM / Industrie 2022 -->
+    <div class="proj-c fi">
+      <div class="proj-thumb proj-thumb-v1 proj-thumb-img" style="background-image:url('images/mission-industrie.jpg')">
+        <span class="proj-cat">Change & Adoption</span>
+        <span class="proj-vis-meta">Industrie · 2022</span>
+      </div>
+      <div class="proj-body">
+        <h3>Industrial Change & Adoption</h3>
+        <p>Adoption de la plateforme 3DEXPERIENCE auprès des équipes ingénierie dans un contexte de transformation PLM internationale.</p>
+        <div class="proj-body-tags">
+          <span class="proj-tag">PLM</span>
+          <span class="proj-tag">Change</span>
+          <span class="proj-tag">Formation</span>
+        </div>
+        <a href="documents/ThechaKoffi_CaseStudy_Valeo.pdf" target="_blank" class="proj-cs-link">
+          Voir le case study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mission 2 — Déploiement / Finance 2024 -->
+    <div class="proj-c fi">
+      <div class="proj-thumb proj-thumb-v2 proj-thumb-img" style="background-image:url('images/mission-finance.jpg')">
+        <span class="proj-cat">PMO & Déploiement</span>
+        <span class="proj-vis-meta">Finance · 2024</span>
+      </div>
+      <div class="proj-body">
+        <h3>Program Stabilization & Coordination</h3>
+        <p>Déploiement international d'un outil achats, coordination multi-pays et sécurisation du go-live en environnement grand compte.</p>
+        <div class="proj-body-tags">
+          <span class="proj-tag">UAT</span>
+          <span class="proj-tag">Gouvernance</span>
+          <span class="proj-tag">Coordination</span>
+        </div>
+        <a href="documents/ThechaKoffi_CaseStudy_BNP.pdf" target="_blank" class="proj-cs-link">
+          Voir le case study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mission 3 — Carve-out / Pharma 2023 -->
+    <div class="proj-c fi">
+      <div class="proj-thumb proj-thumb-v3 proj-thumb-img" style="background-image:url('images/mission-pharma.jpg')">
+        <span class="proj-cat" style="background:rgba(255,252,248,.9)">International</span>
+        <span class="proj-vis-meta dark">Pharma · 2023</span>
+      </div>
+      <div class="proj-body">
+        <h3>International PMO & Carve-Out</h3>
+        <p>Support PMO d'un programme stratégique de séparation digitale avec pilotage des risques et coordination internationale.</p>
+        <div class="proj-body-tags">
+          <span class="proj-tag">PMO</span>
+          <span class="proj-tag">Carve-out</span>
+          <span class="proj-tag">Risques</span>
+        </div>
+        <a href="documents/ThechaKoffi_CaseStudy_Sanofi.pdf" target="_blank" class="proj-cs-link">
+          Voir le case study
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="docs-hd fi">Documents & Ressources</p>
+  <div class="docs-g">
+    <div class="doc-c fi">
+      <div class="doc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <div>
+        <p class="doc-t">Case Study · IA & Adoption</p>
+        <h4>Illustration d'une démarche d'adoption digitale</h4>
+        <p>Approche de change management sur un cas d'usage IA.</p>
+        <div class="doc-acts">
+          <a href="documents/ThechaKoffi_Extrait_Conduite_Changement_2026.pdf" target="_blank" rel="noopener" class="dbtn dbtn-o">Ouvrir ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="doc-c fi">
+      <div class="doc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <div>
+        <p class="doc-t">Case Study · PLM</p>
+        <h4>Coordination formation & adoption · Projet PLM 3DX</h4>
+        <p>Accompagnement utilisateur et pilotage go-live sur un projet PLM industriel.</p>
+        <div class="doc-acts">
+          <a href="documents/ThechaKoffi_Approche_Formation_Adoption_PLM_2026.pdf" target="_blank" rel="noopener" class="dbtn dbtn-o">Ouvrir ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- micro-CTA after projets -->
+<div class="sec-cta fi" style="margin: -2rem 5vw -2rem; position:relative; z-index:2">
+  <div class="sec-cta-txt">
+    Une mission similaire à piloter ?
+    <span>Chaque contexte est unique, parlons du vôtre.</span>
+  </div>
+  <a href="#contact" class="btn-p" style="white-space:nowrap">Parlons-en →</a>
+</div>
+
+<!-- ═══ TÉMOIGNAGES ═══ -->
+<section id="temoignages">
+  <p class="s-eye fi">Témoignages</p>
+  <h2 class="s-h fi">Ce que disent<br>mes <em>clients</em></h2>
+  <div class="temo-g">
+    <div class="temo fi"><p class="temo-q">« Un véritable atout pour stabiliser la mission et rassurer le client »</p><p class="temo-body">Thecha a rapidement pris en main des sujets complexes dans un contexte exigeant, apportant autonomie, rigueur et stabilité à l'équipe projet.</p><div class="temo-ft"><div class="temo-av">BNP</div><div class="temo-src"><strong>Transformation Digitale</strong>BNP Paribas</div></div></div>
+    <div class="temo fi"><p class="temo-q">« Un engagement fort et une montée en puissance remarquable »</p><p class="temo-body">Dans un programme international à forte intensité, Thecha s'est intégrée rapidement et a contribué avec leadership et sens du delivery.</p><div class="temo-ft"><div class="temo-av">SNF</div><div class="temo-src"><strong>PMO Programme</strong>Sanofi</div></div></div>
+    <div class="temo fi"><p class="temo-q">« Une stratégie change encore utilisée aujourd'hui »</p><p class="temo-body">Thecha a su structurer la stratégie change et piloter l'adoption dans un environnement exigeant, avec assertivité et excellent relationnel.</p><div class="temo-ft"><div class="temo-av">VLO</div><div class="temo-src"><strong>Change Management</strong>Valeo</div></div></div>
+  </div>
+</section>
+
+<!-- ═══ PROCESSUS ═══ -->
+<section id="processus">
+  <p class="s-eye fi">Comment je travaille</p>
+  <h2 class="s-h fi">Du premier échange<br>au <em>go-live</em></h2>
+  <div class="process-g">
+    <div class="process-step fi">
+      <div class="process-num">01</div>
+      <div class="process-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <h3>Prise de contact</h3>
+      <p>Un échange de 30 min pour comprendre votre contexte, vos enjeux et vos contraintes. Gratuit et sans engagement.</p>
+    </div>
+    <div class="process-step fi">
+      <div class="process-num">02</div>
+      <div class="process-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+      </div>
+      <h3>Cadrage & proposition</h3>
+      <p>Formalisation d'une proposition d'intervention adaptée : périmètre, livrables, planning et modalités de collaboration.</p>
+    </div>
+    <div class="process-step fi">
+      <div class="process-num">03</div>
+      <div class="process-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>Démarrage opérationnel</h3>
+      <p>Disponibilité rapide, intégration fluide et montée en autonomie progressive selon votre contexte projet.</p>
+    </div>
+    <div class="process-step fi">
+      <div class="process-num">04</div>
+      <div class="process-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Pilotage & transfert</h3>
+      <p>Suivi régulier, ajustements continus et transfert de connaissances pour favoriser l'autonomie des équipes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq">
+  <p class="s-eye fi">Questions fréquentes</p>
+  <h2 class="s-h fi">Ce que l'on me<br>demande <em>souvent</em></h2>
+  <div class="faq-list">
+    <div class="faq-item fi">
+      <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)" aria-expanded="false">
+        En régie ou clé en main ?
+        <span class="faq-ico">+</span>
+      </div>
+      <div class="faq-a">Je travaille principalement <strong>en régie</strong>, intégrée dans vos équipes projet : c'est le mode qui correspond le mieux à mon profil. Pour des besoins plus ciblés (atelier, audit, plan de formation), je propose aussi des <strong>dispositifs clé en main</strong> à périmètre défini.</div>
+    </div>
+    <div class="faq-item fi">
+      <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)" aria-expanded="false">
+        Quelle est votre disponibilité actuelle ?
+        <span class="faq-ico">+</span>
+      </div>
+      <div class="faq-a">Je suis disponible rapidement pour de nouvelles missions. Le badge de statut en haut de page reflète ma disponibilité en temps réel. Pour les missions longue durée, je recommande d'initier la conversation dès que votre projet est identifié.</div>
+    </div>
+    <div class="faq-item fi">
+      <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)" aria-expanded="false">
+        Travaillez-vous à distance ?
+        <span class="faq-ico">+</span>
+      </div>
+      <div class="faq-a">Oui : <strong>présentiel, remote ou hybride</strong> selon vos contraintes organisationnelles. J'interviens également sur des missions internationales, en anglais, et suis habituée aux environnements multi-sites et multi-pays.</div>
+    </div>
+    <div class="faq-item fi">
+      <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)" aria-expanded="false">
+        Quel est votre tarif journalier ?
+        <span class="faq-ico">+</span>
+      </div>
+      <div class="faq-a">Mon TJM démarre à <strong>550 €/jour</strong> et s'adapte au contexte de la mission (durée, périmètre, modalités). Un premier échange de 30 min suffit pour cadrer une proposition adaptée à votre besoin.</div>
+    </div>
+    <div class="faq-item fi">
+      <div class="faq-q" onclick="toggleFaq(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)" aria-expanded="false">
+        Quel type de missions ne correspond pas à votre profil ?
+        <span class="faq-ico">+</span>
+      </div>
+      <div class="faq-a">Par souci de transparence, certaines missions ne correspondent pas à mon positionnement : le <strong>PMO administratif et secrétariat de projet</strong>, le <strong>support technique de niveau 1 (helpdesk)</strong>, et la <strong>gestion de projet au forfait temps</strong>. Mon expertise est orientée transformation, changement et pilotage stratégique.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <p class="s-eye fi">Contact</p>
+  <div class="contact-layout">
+    <div class="fi">
+      <h2 class="c-headline">Construisons ensemble<br>vos prochaines <em>transformations</em></h2>
+      <div class="status-wrap">
+        <div class="status-label">Mon statut actuel</div>
+        <div class="status-opts">
+          <div class="status-opt active" id="s1" onclick="setStatus(1)">
+            <span class="s-dot"></span>Disponible pour missions freelance
+          </div>
+          <div class="status-opt" id="s2" onclick="setStatus(2)">
+            <span class="s-dot"></span>En mission · ouverte à de nouvelles opportunités
+          </div>
+        </div>
+      </div>
+      <div class="avail-list">
+        <div class="avail-item">Missions freelance</div>
+        <div class="avail-item">Programmes de transformation</div>
+        <div class="avail-item">Conduite du changement & adoption</div>
+      </div>
+      <p class="tarif-note">TJM à partir de 550 €/jour · Tarif adapté au contexte de la mission</p>
+      <div class="hors-scope">
+        <p class="hs-label">Hors de mon périmètre</p>
+        <div class="hs-item">PMO Administratif & Secrétariat de projet</div>
+        <div class="hs-item">Support technique de Niveau 1 (Helpdesk)</div>
+        <div class="hs-item">Gestion de Projet au forfait "Temps"</div>
+      </div>
+    </div>
+    <div class="fi">
+      <div class="c-items">
+        <a href="mailto:thechakoffi@gmail.com" class="c-item">
+          <div class="c-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div><p class="c-lb">E-mail</p><p class="c-vl">thechakoffi@gmail.com</p></div>
+        </a>
+        <a href="https://www.linkedin.com/in/koffi-thecha/?locale=en" target="_blank" rel="noopener noreferrer" class="c-item">
+          <div class="c-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div><p class="c-lb">LinkedIn</p><p class="c-vl">linkedin.com/in/koffi-thecha</p></div>
+        </a>
+      </div>
+      <div class="cta-blk">
+        <a href="cv/cv-premium.html" target="_blank" rel="noopener" aria-label="Voir mon CV" class="btn-cv">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Voir mon CV
+        </a>
+        <a href="https://calendly.com/thechakoffi/30min" target="_blank" rel="noopener noreferrer" class="btn-calendly">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Réserver un échange de 30 min
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AVIS ═══ -->
+<section id="avis">
+  <p class="s-eye fi">Votre avis</p>
+  <h2 class="s-h fi">Laissez un <em>retour</em></h2>
+  <div class="avis-g">
+    <div class="fi">
+      <p class="avis-intro">Ce formulaire est destiné aux retours d'expérience : collaboration passée, premier contact, ou impression générale. Chaque message est transmis directement et reste confidentiel.</p>
+      <form id="avis-form" action="https://formspree.io/f/mkoegnwv" method="POST">
+        <input type="hidden" name="_subject" value="Retour portfolio · Thecha KOFFI">
+        <div class="fg">
+          <label for="an">Votre nom (optionnel)</label>
+          <input type="text" name="name" id="an" placeholder="Prénom ou pseudonyme">
+        </div>
+        <div class="fg">
+          <label for="at">Votre retour</label>
+          <textarea name="message" id="at" placeholder="Design, clarté, navigation, impression générale…" required></textarea>
+        </div>
+        <button type="submit" class="btn-p">Envoyer mon avis →</button>
+      </form>
+      <div id="avis-ok">✓ Merci pour votre retour, je le lirai avec attention !</div>
+      <p class="form-note">Vos avis sont reçus directement par email et ne sont jamais publiés sans accord explicite.</p>
+    </div>
+    <div class="avis-r fi">
+      <div class="avis-card"><h4>Pourquoi votre avis compte</h4><p>En tant que consultante freelance, mon portfolio est ma vitrine principale. Votre retour m'aide à l'optimiser.</p></div>
+      <div class="avis-card"><h4>Confidentialité</h4><p>Vos commentaires me sont transmis directement par email et ne sont jamais publiés sans accord explicite.</p></div>
+      <div class="avis-card"><h4>Ce que j'attends</h4><p>Clarté du message, design, navigation, impression générale. Tout retour est bienvenu et précieux.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="ft-logo">Thecha <span>Koffi</span></div>
+  <p>© 2026 · Consultante Transformation Digitale & Change Management</p>
+  <div class="ft-links">
+    <a href="mailto:thechakoffi@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/koffi-thecha/?locale=en" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://calendly.com/thechakoffi/30min" target="_blank" rel="noopener noreferrer">Calendly</a>
+  </div>
+</footer>
+
+<script>
+/* ── NAV ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+
+/* ── HAMBURGER ── */
+const hamBtn = document.getElementById('ham');
+const mob    = document.getElementById('mob');
+hamBtn.addEventListener('click', () => {
+  hamBtn.classList.toggle('open');
+  mob.classList.toggle('open');
+});
+function closeMob() { hamBtn.classList.remove('open'); mob.classList.remove('open'); }
+
+/* ── SCROLL NAV ── */
+const snTop = document.getElementById('sn-top');
+const snDn  = document.getElementById('sn-dn');
+const SECS  = ['hero','why','apropos','parcours','projets','temoignages','processus','faq','contact','avis'];
+function isAtBottom() { return (window.innerHeight + scrollY) >= document.body.offsetHeight - 100; }
+window.addEventListener('scroll', () => {
+  snTop.classList.toggle('visible', scrollY > 400);
+  snDn.style.opacity = isAtBottom() ? '0' : '1';
+  snDn.style.pointerEvents = isAtBottom() ? 'none' : 'auto';
+});
+snDn.addEventListener('click', () => {
+  const next = SECS.find(id => {
+    const el = document.getElementById(id);
+    return el && el.getBoundingClientRect().top > 80;
+  });
+  if (next) document.getElementById(next).scrollIntoView({ behavior: 'smooth' });
+});
+
+/* ── MODAL ── */
+function openModal(t, d, u) {
+  document.getElementById('m-title').textContent = t;
+  document.getElementById('m-desc').textContent  = d;
+  document.getElementById('m-link').href = u;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal')) closeModal();
+});
+
+/* ── STATUS ── */
+function setStatus(n) {
+  document.getElementById('s1').classList.toggle('active', n === 1);
+  document.getElementById('s2').classList.toggle('active', n === 2);
+  const badge = document.getElementById('hero-badge');
+  const txt   = document.getElementById('badge-txt');
+  const dot   = badge.querySelector('.avail-dot');
+  if (n === 1) {
+    txt.textContent = 'Disponible pour missions freelance';
+    badge.style.cssText = '';
+    dot.style.cssText   = '';
+  } else {
+    txt.textContent = 'En mission · ouverte à de nouvelles opportunités';
+    badge.style.background   = 'rgba(34,197,94,.07)';
+    badge.style.borderColor  = 'rgba(34,197,94,.25)';
+    badge.style.color        = '#166534';
+    dot.style.background     = '#22C55E';
+  }
+}
+setStatus(1);
+
+/* ── FORMSUBMIT ── */
+const avisForm = document.getElementById('avis-form');
+avisForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const texte = document.getElementById('at').value;
+  if (!texte.trim()) return;
+  try {
+    const res  = await fetch(avisForm.action, {
+      method: 'POST',
+      body: new FormData(avisForm),
+      headers: { 'Accept': 'application/json' }
+    });
+    const data = await res.json();
+    if (data.success === 'true' || res.ok) {
+      document.getElementById('avis-ok').style.display = 'block';
+      avisForm.reset();
+    }
+  } catch(err) {
+    console.error(err);
+  }
+});
+
+/* ── FAQ ── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+/* ── FADE IN ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('v'), i * 60);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+if (history.scrollRestoration) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+</script>
+</body>
+</html>
