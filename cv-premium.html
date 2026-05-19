@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV · Thecha KOFFI · Transformation Digitale & Change Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --terra:   #A8471A;
+  --terra-d: #7E3411;
+  --terra-l: #F5EDE4;
+  --ink:     #18110C;
+  --ink-2:   #4A3728;
+  --ink-3:   #8C7060;
+  --warm:    #FDFAF6;
+  --border:  rgba(168,71,26,.15);
+}
+
+/* ── SCREEN ── */
+body {
+  background: #DEDAD4;
+  font-family: 'Outfit', sans-serif;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem 4rem;
+  gap: 1.5rem;
+}
+
+.controls {
+  display: flex; gap: .8rem; flex-wrap: wrap; justify-content: center;
+}
+.btn {
+  padding: .6rem 1.5rem; border: none; border-radius: 8px;
+  font-family: 'Outfit', sans-serif; font-size: .82rem; font-weight: 600;
+  cursor: pointer; transition: opacity .2s;
+}
+.btn:hover { opacity: .85; }
+.btn-ink { background: #18110C; color: #FDFAF6; }
+
+/* ── PAGE ── */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  background: var(--warm);
+  box-shadow: 0 4px 12px rgba(0,0,0,.1), 0 20px 56px rgba(0,0,0,.15);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ══════ HEADER ══════ */
+.cv-header {
+  background: var(--terra);
+  background: linear-gradient(135deg, #B04C1E 0%, #7E3411 100%);
+  padding: 9mm 10mm 8mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 6mm;
+}
+
+.h-left {}
+.h-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 8.5mm;
+  color: #FDFAF6;
+  letter-spacing: .04em;
+  line-height: 1;
+}
+.h-title {
+  font-size: 2.6mm;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(253,250,246,.75);
+  margin-top: 2mm;
+}
+
+.h-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.4mm;
+}
+.h-contact {
+  font-size: 2.2mm;
+  color: rgba(253,250,246,.85);
+  display: flex;
+  align-items: center;
+  gap: 1.5mm;
+  letter-spacing: .01em;
+}
+.h-contact svg {
+  width: 2.5mm; height: 2.5mm;
+  stroke: rgba(253,250,246,.7);
+  flex-shrink: 0;
+}
+
+.h-tags {
+  display: flex; gap: 1.5mm; margin-top: 1.5mm;
+}
+.h-tag {
+  font-size: 1.9mm; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: rgba(253,250,246,.7);
+  border: .3mm solid rgba(253,250,246,.3);
+  border-radius: 8mm; padding: .5mm 2mm;
+}
+
+/* ══════ BODY ══════ */
+.cv-body {
+  display: flex;
+  flex: 1;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: 68mm;
+  flex-shrink: 0;
+  background: var(--terra-l);
+  padding: 7mm 6mm;
+  display: flex;
+  flex-direction: column;
+  gap: 6mm;
+  border-right: .3mm solid var(--border);
+}
+
+/* ── MAIN ── */
+.main {
+  flex: 1;
+  padding: 7mm 8mm 7mm 7mm;
+  display: flex;
+  flex-direction: column;
+  gap: 6mm;
+}
+
+/* ══════ SECTION TITLE ══════ */
+.sec-title {
+  font-size: 1.9mm;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 3mm;
+  display: flex;
+  align-items: center;
+  gap: 1.5mm;
+}
+.sec-title::after {
+  content: '';
+  flex: 1;
+  height: .25mm;
+  background: var(--border);
+}
+
+/* ══════ SIDEBAR SECTIONS ══════ */
+
+/* Profil */
+.profil-text {
+  font-size: 2.35mm;
+  color: var(--ink-2);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* Compétences */
+.skill-group { margin-bottom: 3mm; }
+.skill-group:last-child { margin-bottom: 0; }
+.skill-cat {
+  font-size: 1.9mm; font-weight: 700;
+  color: var(--terra-d);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 1.2mm;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: .8mm; }
+.skill-tag {
+  font-size: 2mm; font-weight: 500;
+  color: var(--ink-2);
+  background: white;
+  border: .25mm solid var(--border);
+  border-radius: 8mm;
+  padding: .4mm 1.8mm;
+  letter-spacing: .01em;
+}
+
+/* Formation */
+.formation-item { margin-bottom: 2.5mm; }
+.formation-item:last-child { margin-bottom: 0; }
+.f-degree {
+  font-size: 2.3mm; font-weight: 600;
+  color: var(--ink); line-height: 1.3;
+}
+.f-school { font-size: 2mm; color: var(--terra); font-weight: 500; margin-top: .4mm; }
+.f-year { font-size: 1.85mm; color: var(--ink-3); margin-top: .3mm; }
+
+/* Certifications */
+.cert-item {
+  display: flex; gap: 1.5mm;
+  margin-bottom: 2.5mm; align-items: flex-start;
+}
+.cert-item:last-child { margin-bottom: 0; }
+.cert-dot {
+  width: 1.5mm; height: 1.5mm;
+  background: var(--terra);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 1mm;
+}
+.cert-info {}
+.cert-name { font-size: 2.2mm; font-weight: 600; color: var(--ink); line-height: 1.3; }
+.cert-org { font-size: 1.9mm; color: var(--terra); margin-top: .3mm; font-weight: 500; }
+.cert-date { font-size: 1.75mm; color: var(--ink-3); margin-top: .2mm; }
+
+/* TJM */
+.tjm-box {
+  background: var(--terra);
+  background: linear-gradient(135deg, #B04C1E 0%, #7E3411 100%);
+  border-radius: 2mm;
+  padding: 3mm 4mm;
+  text-align: center;
+}
+.tjm-label { font-size: 1.7mm; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: rgba(253,250,246,.7); }
+.tjm-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 6mm; font-weight: 600;
+  color: #FDFAF6; line-height: 1.1; margin-top: .5mm;
+}
+.tjm-sub { font-size: 1.7mm; color: rgba(253,250,246,.6); margin-top: .5mm; }
+
+/* ══════ MAIN — EXPÉRIENCES ══════ */
+.employer {
+  margin-bottom: 5.5mm;
+}
+.employer:last-child { margin-bottom: 0; }
+
+.employer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1mm;
+}
+.employer-name {
+  font-size: 3mm; font-weight: 700;
+  color: var(--ink); letter-spacing: .02em;
+}
+.employer-period {
+  font-size: 2mm; font-weight: 500;
+  color: var(--ink-3); letter-spacing: .04em;
+  white-space: nowrap;
+}
+.employer-title {
+  font-size: 2.1mm; font-weight: 500;
+  color: var(--terra); letter-spacing: .05em;
+  text-transform: uppercase; margin-bottom: 2.5mm;
+}
+
+.mission {
+  margin-bottom: 3.5mm;
+  padding-left: 2.5mm;
+  border-left: .5mm solid var(--border);
+}
+.mission:last-child { margin-bottom: 0; }
+
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.2mm;
+}
+.mission-client {
+  font-size: 2.4mm; font-weight: 600;
+  color: var(--ink-2);
+}
+.mission-duration {
+  font-size: 1.85mm; color: var(--ink-3);
+  font-style: italic; white-space: nowrap;
+}
+
+.bullets { list-style: none; display: flex; flex-direction: column; gap: .8mm; }
+.bullets li {
+  font-size: 2.1mm; color: var(--ink-2);
+  line-height: 1.55; padding-left: 2.5mm;
+  position: relative;
+}
+.bullets li::before {
+  content: '–';
+  position: absolute; left: 0;
+  color: var(--terra); font-weight: 600;
+}
+
+/* ══════ MOBILE ══════ */
+@media screen and (max-width: 850px) {
+  body { padding: .5rem .5rem 3rem; }
+  .controls { flex-wrap: wrap; justify-content: center; }
+}
+
+/* ══════ PRINT ══════ */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body { background: white; padding: 0; display: block; }
+  .controls { display: none !important; }
+  .page {
+    width: 210mm; min-height: 297mm;
+    box-shadow: none; margin: 0;
+  }
+  @page { size: A4; margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <button class="btn btn-ink" onclick="window.print()">Enregistrer en PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- ══ HEADER ══ -->
+  <div class="cv-header">
+    <div class="h-left">
+      <div class="h-name">Thecha KOFFI</div>
+      <div class="h-title">Consultante Transformation Digitale &amp; Change Management</div>
+      <div class="h-tags" style="margin-top:3mm">
+        <span class="h-tag">Freelance</span>
+        <span class="h-tag">Paris &amp; Remote</span>
+        <span class="h-tag">Anglais courant</span>
+      </div>
+    </div>
+    <div class="h-right">
+      <div class="h-contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        thechakoffi@gmail.com
+      </div>
+      <div class="h-contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/koffi-thecha
+      </div>
+      <div class="h-contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        thechakoffi.com
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ BODY ══ -->
+  <div class="cv-body">
+
+    <!-- ── SIDEBAR ── -->
+    <div class="sidebar">
+
+      <!-- Profil -->
+      <div>
+        <div class="sec-title">Profil</div>
+        <p class="profil-text">
+          Consultante freelance avec <strong>5+ ans d'expérience</strong> chez KPMG, Capgemini et Deloitte. J'interviens sur des programmes de transformation digitale, de déploiement d'outils et de conduite du changement à fort enjeu dans des grands groupes internationaux.
+        </p>
+      </div>
+
+      <!-- Compétences -->
+      <div>
+        <div class="sec-title">Compétences</div>
+
+        <div class="skill-group">
+          <div class="skill-cat">Change Management</div>
+          <div class="skill-tags">
+            <span class="skill-tag">ADKAR</span>
+            <span class="skill-tag">Prosci</span>
+            <span class="skill-tag">Analyse d'impact</span>
+            <span class="skill-tag">Conduite du changement</span>
+            <span class="skill-tag">Plan de communication</span>
+            <span class="skill-tag">Adoption utilisateur</span>
+            <span class="skill-tag">Formation</span>
+            <span class="skill-tag">Résistance au changement</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-cat">Gestion de projet / PMO</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Agile</span>
+            <span class="skill-tag">Scrum</span>
+            <span class="skill-tag">Kanban</span>
+            <span class="skill-tag">Waterfall</span>
+            <span class="skill-tag">Gouvernance projet</span>
+            <span class="skill-tag">Reporting</span>
+            <span class="skill-tag">Gestion des risques</span>
+            <span class="skill-tag">UAT</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-cat">Outils &amp; Plateformes</div>
+          <div class="skill-tags">
+            <span class="skill-tag">SAP Fiori</span>
+            <span class="skill-tag">SAP 4HANA</span>
+            <span class="skill-tag">AEM</span>
+            <span class="skill-tag">SharePoint</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Confluence</span>
+            <span class="skill-tag">ServiceNow</span>
+            <span class="skill-tag">Klaxoon</span>
+            <span class="skill-tag">Vyond</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-cat">Data &amp; Reporting</div>
+          <div class="skill-tags">
+            <span class="skill-tag">KPI &amp; tableaux de bord</span>
+            <span class="skill-tag">Excel avancé</span>
+            <span class="skill-tag">SQL (notions)</span>
+            <span class="skill-tag">Analyse comportement utilisateur</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formation -->
+      <div>
+        <div class="sec-title">Formation</div>
+        <div class="formation-item">
+          <div class="f-degree">Master Bi-cursus<br>Marketing Digital &amp; Data Analytics</div>
+          <div class="f-school">EMLV · IIM Digital School</div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div>
+        <div class="sec-title">Certifications</div>
+
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div class="cert-info">
+            <div class="cert-name">Conception Responsable de Services Numériques</div>
+            <div class="cert-org">La Rochelle Université</div>
+            <div class="cert-date">Oct. 2025 · ID : 7gq4VfF5</div>
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div class="cert-info">
+            <div class="cert-name">Green IT Essentials</div>
+            <div class="cert-org">Capgemini University</div>
+            <div class="cert-date">Avr. 2024</div>
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div class="cert-info">
+            <div class="cert-name">Business Analyst Certification</div>
+            <div class="cert-org">Capgemini · Business Analysis Global Community</div>
+            <div class="cert-date">Sep. 2023</div>
+          </div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div class="cert-info">
+            <div class="cert-name">Réussir le Changement</div>
+            <div class="cert-org">ESSEC Business School · Coursera</div>
+            <div class="cert-date">Oct. 2022</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TJM -->
+      <div class="tjm-box">
+        <div class="tjm-label">TJM à partir de</div>
+        <div class="tjm-val">550 €/j</div>
+        <div class="tjm-sub">Paris · Remote · Disponible</div>
+      </div>
+
+    </div><!-- /sidebar -->
+
+    <!-- ── MAIN ── -->
+    <div class="main">
+
+      <div>
+        <div class="sec-title">Expériences professionnelles</div>
+
+        <!-- KPMG -->
+        <div class="employer">
+          <div class="employer-header">
+            <div class="employer-name">KPMG</div>
+            <div class="employer-period">2024 – Présent · France</div>
+          </div>
+          <div class="employer-title">Consultant Chef de Projet IT / PMO</div>
+
+          <div class="mission">
+            <div class="mission-header">
+              <div class="mission-client">BNP Paribas CIB – Cluster Lead · Déploiement international</div>
+              <div class="mission-duration">+8 mois</div>
+            </div>
+            <ul class="bullets">
+              <li>Pilotage du déploiement international d'un outil achat (PWISE) sur plusieurs pays en environnement multi-acteurs</li>
+              <li>Gestion des phases de recette (UAT), suivi et résolution des incidents (Jira, Confluence, Octane)</li>
+              <li>Structuration de la gouvernance projet, production de reportings et suivi de l'hygiène des données</li>
+              <li>Coordination équipes métiers et IT ; adaptation du déploiement aux contraintes locales jusqu'au go-live</li>
+            </ul>
+          </div>
+
+          <div class="mission">
+            <div class="mission-header">
+              <div class="mission-client">Sanofi – Digital Separation Program Chloe 2.0</div>
+              <div class="mission-duration">+6 mois</div>
+            </div>
+            <ul class="bullets">
+              <li>Support PMO d'un programme stratégique de séparation digitale en contexte international anglophone</li>
+              <li>Pilotage du suivi projet, reporting et communication auprès des grandes instances</li>
+              <li>Animation des réunions de suivi d'avancement et identification des écarts aux plans initiaux</li>
+              <li>Pilotage des risques projets : identification, évaluation et traitement des risques associés</li>
+            </ul>
+          </div>
+
+          <div class="mission">
+            <div class="mission-header">
+              <div class="mission-client">L'Oréal – Rollout Kit SAP S/4HANA</div>
+              <div class="mission-duration">3 mois</div>
+            </div>
+            <ul class="bullets">
+              <li>Support au déploiement de solutions data (POS/SFS) de SAP ECC vers SAP 4HANA</li>
+              <li>Création de supports d'accompagnement et structuration du toolkit projet</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Capgemini -->
+        <div class="employer">
+          <div class="employer-header">
+            <div class="employer-name">Capgemini</div>
+            <div class="employer-period">2022 – 2024 · France</div>
+          </div>
+          <div class="employer-title">Consultante Change Management</div>
+
+          <div class="mission">
+            <div class="mission-header">
+              <div class="mission-client">UGAP – Déploiement outil achat SAP Fiori</div>
+              <div class="mission-duration">+6 mois</div>
+            </div>
+            <ul class="bullets">
+              <li>Pilotage du change management pour le déploiement SAP Fiori auprès de 300+ utilisateurs internes et externes</li>
+              <li>Animation de formations et ateliers, suivi des KPI d'adoption et amélioration continue</li>
+              <li>Recueil des retours utilisateurs et optimisation du déploiement en continu</li>
+            </ul>
+          </div>
+
+          <div class="mission">
+            <div class="mission-header">
+              <div class="mission-client">Valeo – PLM Transformation (ENOVIA → 3DEXPERIENCE)</div>
+              <div class="mission-duration">1 an+</div>
+            </div>
+            <ul class="bullets">
+              <li>Pilotage du change management sur une migration PLM internationale auprès des équipes R&amp;D et IT</li>
+              <li>Analyse des impacts, accompagnement au changement et mise en place d'un environnement collaboratif SharePoint</li>
+              <li>Production de supports utilisateurs (guides, tutoriels vidéo)</li>
+            </ul>
+          </div>
+
+          <div class="mission">
+            <div class="mission-header">
+              <div class="mission-client">SIMMT – Ministère des Armées (Finance)</div>
+              <div class="mission-duration">3 mois</div>
+            </div>
+            <ul class="bullets">
+              <li>Création de supports de vulgarisation et d'accompagnement (Vyond, Canva, PowerPoint)</li>
+              <li>Simplification des processus métiers pour les utilisateurs finaux</li>
+            </ul>
+          </div>
+
+          <div class="mission">
+            <div class="mission-header">
+              <div class="mission-client">FIVA – Business Analysis / AMOA</div>
+              <div class="mission-duration">2 mois</div>
+            </div>
+            <ul class="bullets">
+              <li>Conduite d'entretiens métiers et analyse des besoins utilisateurs</li>
+              <li>Diagnostic des processus documentaires (GED) et formalisation des recommandations fonctionnelles (cadrage AMOA)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Deloitte -->
+        <div class="employer">
+          <div class="employer-header">
+            <div class="employer-name">Deloitte</div>
+            <div class="employer-period">2020 – 2022 · France</div>
+          </div>
+          <div class="employer-title">Chef de Projet Digital Webmaster</div>
+
+          <div class="mission">
+            <div class="mission-header">
+              <div class="mission-client">Support Communication – Plateformes digitales internes</div>
+            </div>
+            <ul class="bullets">
+              <li>Pilotage des plateformes intranet/extranet (AEM, SharePoint) : performances, anomalies et amélioration continue</li>
+              <li>Structuration de l'architecture documentaire et coordination des équipes métiers et techniques</li>
+              <li>Création de contenus éditoriaux et supports de communication interne</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /main -->
+
+  </div><!-- /body -->
+</div><!-- /page -->
+
+<script>
+function scaleCV() {
+  const page = document.querySelector('.page');
+  if (!page) return;
+  const vw = window.innerWidth;
+  const pageW = page.offsetWidth;
+  if (vw < pageW + 40) {
+    const scale = (vw - 16) / pageW;
+    page.style.transform = 'scale(' + scale + ')';
+    page.style.transformOrigin = 'top center';
+    page.style.marginBottom = '-' + (pageW * (1 - scale)) + 'px';
+  } else {
+    page.style.transform = '';
+    page.style.marginBottom = '';
+  }
+}
+scaleCV();
+window.addEventListener('resize', scaleCV);
+</script>
+
+</body>
+</html>
