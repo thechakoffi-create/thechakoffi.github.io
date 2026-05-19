@@ -296,6 +296,12 @@ body {
   color: var(--terra); font-weight: 600;
 }
 
+/* ══════ MOBILE ══════ */
+@media screen and (max-width: 850px) {
+  body { padding: .5rem .5rem 3rem; }
+  .controls { flex-wrap: wrap; justify-content: center; }
+}
+
 /* ══════ PRINT ══════ */
 @media print {
   * {
@@ -610,6 +616,26 @@ body {
 
   </div><!-- /body -->
 </div><!-- /page -->
+
+<script>
+function scaleCV() {
+  const page = document.querySelector('.page');
+  if (!page) return;
+  const vw = window.innerWidth;
+  const pageW = page.offsetWidth;
+  if (vw < pageW + 40) {
+    const scale = (vw - 16) / pageW;
+    page.style.transform = 'scale(' + scale + ')';
+    page.style.transformOrigin = 'top center';
+    page.style.marginBottom = '-' + (pageW * (1 - scale)) + 'px';
+  } else {
+    page.style.transform = '';
+    page.style.marginBottom = '';
+  }
+}
+scaleCV();
+window.addEventListener('resize', scaleCV);
+</script>
 
 </body>
 </html>
