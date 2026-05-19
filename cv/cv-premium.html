@@ -619,21 +619,19 @@ body {
 
 <script>
 function scaleCV() {
-  const page = document.querySelector('.page');
+  var page = document.querySelector('.page');
   if (!page) return;
-  const vw = window.innerWidth;
-  const pageW = page.offsetWidth;
-  if (vw < pageW + 40) {
-    const scale = (vw - 16) / pageW;
-    page.style.transform = 'scale(' + scale + ')';
-    page.style.transformOrigin = 'top center';
-    page.style.marginBottom = '-' + (pageW * (1 - scale)) + 'px';
+  var vw = window.innerWidth;
+  var pageW = 794;
+  if (vw < pageW + 32) {
+    var scale = (vw - 8) / pageW;
+    page.style.zoom = scale;
+    page.style.width = '210mm';
   } else {
-    page.style.transform = '';
-    page.style.marginBottom = '';
+    page.style.zoom = '';
   }
 }
-scaleCV();
+window.addEventListener('load', scaleCV);
 window.addEventListener('resize', scaleCV);
 </script>
 
