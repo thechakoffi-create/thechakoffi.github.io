@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV · Thecha KOFFI · Moment Miami</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  color: #1a1a1a;
+  background: #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 4rem;
+  gap: 1rem;
+}
+.controls { display: flex; gap: .8rem; }
+.btn {
+  padding: .55rem 1.4rem;
+  border: none; border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: .82rem; font-weight: 600;
+  cursor: pointer; transition: opacity .2s;
+}
+.btn:hover { opacity: .85; }
+.btn-dark { background: #1a1a1a; color: #fff; }
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  padding: 18mm 16mm 16mm;
+  box-shadow: 0 4px 24px rgba(0,0,0,.12);
+}
+@media (max-width: 230mm) {
+  body { padding: 1rem 0 3rem; }
+  .page { width: 100%; min-height: unset; padding: 6vw 5vw 8vw; box-shadow: none; }
+}
+.header { border-bottom: 2px solid #1a1a1a; padding-bottom: 5mm; margin-bottom: 5mm; }
+.name { font-size: 20pt; font-weight: 700; letter-spacing: -.01em; color: #1a1a1a; line-height: 1.1; }
+.title { font-size: 11pt; font-weight: 500; color: #444; margin-top: 1.5mm; letter-spacing: .01em; }
+.contacts { display: flex; flex-wrap: wrap; gap: 0 6mm; margin-top: 3mm; font-size: 9pt; color: #444; }
+.contacts span { white-space: nowrap; }
+.section { margin-bottom: 5.5mm; }
+.sec-title {
+  font-size: 9.5pt; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: #1a1a1a;
+  border-bottom: 1px solid #1a1a1a; padding-bottom: 1mm; margin-bottom: 3.5mm;
+}
+.profil { font-size: 10pt; line-height: 1.6; color: #222; }
+.employer-block { margin-bottom: 5mm; }
+.employer-block:last-child { margin-bottom: 0; }
+.employer-line { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .8mm; }
+.employer-name { font-size: 11pt; font-weight: 700; color: #1a1a1a; }
+.employer-period { font-size: 9pt; color: #555; font-weight: 500; }
+.employer-title { font-size: 9.5pt; font-weight: 600; color: #444; margin-bottom: 2.5mm; }
+.mission-block { margin-bottom: 3mm; padding-left: 3mm; }
+.mission-block:last-child { margin-bottom: 0; }
+.mission-line { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1mm; }
+.mission-name { font-size: 10pt; font-weight: 600; color: #222; }
+.mission-duration { font-size: 8.5pt; color: #666; font-style: italic; }
+.bullets { list-style: none; display: flex; flex-direction: column; gap: .7mm; padding-left: 3mm; }
+.bullets li { font-size: 9.5pt; line-height: 1.5; color: #333; position: relative; padding-left: 3mm; }
+.bullets li::before { content: '•'; position: absolute; left: 0; color: #555; }
+.skills-grid { display: flex; flex-direction: column; gap: 2mm; }
+.skill-row { display: flex; gap: 3mm; align-items: baseline; font-size: 9.5pt; line-height: 1.5; }
+.skill-cat { font-weight: 600; color: #1a1a1a; min-width: 45mm; flex-shrink: 0; }
+.skill-val { color: #333; }
+.edu-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2.5mm; font-size: 9.5pt; }
+.edu-item:last-child { margin-bottom: 0; }
+.edu-name { font-weight: 600; color: #1a1a1a; }
+.edu-school { color: #444; font-size: 9pt; }
+.edu-date { color: #666; font-size: 9pt; white-space: nowrap; }
+.cert-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2mm; font-size: 9.5pt; }
+.cert-item:last-child { margin-bottom: 0; }
+.cert-name { font-weight: 600; color: #1a1a1a; line-height: 1.4; }
+.cert-org { color: #555; font-size: 9pt; }
+.cert-date { color: #666; font-size: 8.5pt; white-space: nowrap; text-align: right; }
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { background: white; padding: 0; display: block; }
+  .controls { display: none !important; }
+  .page { box-shadow: none; margin: 0; width: 210mm; min-height: 297mm; }
+  @page { size: A4; margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <button class="btn btn-dark" onclick="window.print()">Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="header">
+    <div class="name">Thecha KOFFI</div>
+    <div class="title">Digital Transformation Consultant · Technology Adoption &amp; Client Engagement</div>
+    <div class="contacts">
+      <span>thechakoffi@gmail.com</span>
+      <span>+33 7 63 99 00 19</span>
+      <span>linkedin.com/in/koffi-thecha</span>
+      <span>thechakoffi.com</span>
+      <span>Paris · Open to relocation · International</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Profile</div>
+    <p class="profil">
+      Consultant with 5+ years of experience driving technology adoption and managing complex transformation projects for global enterprises (KPMG, Capgemini, Deloitte). Proven ability to build trusted relationships with senior stakeholders, articulate technical value propositions, and lead multi-country projects from strategy through execution. Passionate about tech innovation, international environments, and human-centred approaches to driving change. Eager to leverage consulting expertise in a client-facing business development role.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Professional Experience</div>
+
+    <div class="employer-block">
+      <div class="employer-line">
+        <div class="employer-name">TEKOAH (Freelance)</div>
+        <div class="employer-period">Oct. 2026 – Dec. 2026 · France</div>
+      </div>
+      <div class="employer-title">Microsoft 365 Copilot Adoption Consultant</div>
+      <div class="mission-block">
+        <div class="mission-line">
+          <div class="mission-name">HORIZON – Microsoft 365 Copilot Adoption Programme</div>
+          <div class="mission-duration">2 months</div>
+        </div>
+        <ul class="bullets">
+          <li>Designed and led a full Copilot adoption strategy for a corporate client, from needs assessment to go-live</li>
+          <li>Presented the programme to C-level stakeholders and built the business case for AI tool adoption</li>
+          <li>Developed training content and managed a structured rollout plan across business units</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="employer-block">
+      <div class="employer-line">
+        <div class="employer-name">KPMG</div>
+        <div class="employer-period">2024 – 2026 · France</div>
+      </div>
+      <div class="employer-title">IT Project Manager / PMO Consultant</div>
+
+      <div class="mission-block">
+        <div class="mission-line">
+          <div class="mission-name">BNP Paribas CIB – International Procurement Platform Rollout</div>
+          <div class="mission-duration">8+ months</div>
+        </div>
+        <ul class="bullets">
+          <li>Managed client relationship across multiple countries for an international technology deployment</li>
+          <li>Coordinated business and IT teams, navigated cultural and organisational differences to deliver on time</li>
+          <li>Presented project status and risks to senior governance committees on a regular basis</li>
+        </ul>
+      </div>
+
+      <div class="mission-block">
+        <div class="mission-line">
+          <div class="mission-name">Sanofi – Digital Separation Programme (International)</div>
+          <div class="mission-duration">6+ months</div>
+        </div>
+        <ul class="bullets">
+          <li>Operated in a fully English-speaking international environment across multiple business lines</li>
+          <li>Communicated complex programme updates to senior leadership; prepared executive-level reporting</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="employer-block">
+      <div class="employer-line">
+        <div class="employer-name">Capgemini</div>
+        <div class="employer-period">2022 – 2024 · France</div>
+      </div>
+      <div class="employer-title">Change Management Consultant</div>
+
+      <div class="mission-block">
+        <div class="mission-line">
+          <div class="mission-name">Valeo – International PLM Transformation</div>
+          <div class="mission-duration">12+ months</div>
+        </div>
+        <ul class="bullets">
+          <li>Managed change adoption for an international R&amp;D team across multiple countries</li>
+          <li>Designed user engagement strategy, built training programmes and measured adoption outcomes</li>
+          <li>Acted as key interface between technical and business stakeholders throughout the project lifecycle</li>
+        </ul>
+      </div>
+
+      <div class="mission-block">
+        <div class="mission-line">
+          <div class="mission-name">UGAP – SAP Fiori Deployment (300+ users)</div>
+          <div class="mission-duration">6+ months</div>
+        </div>
+        <ul class="bullets">
+          <li>Led end-user adoption programme, delivered training sessions and tracked KPIs to measure impact</li>
+          <li>Gathered client feedback and iterated on communication strategy to accelerate adoption</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="employer-block">
+      <div class="employer-line">
+        <div class="employer-name">Deloitte</div>
+        <div class="employer-period">2020 – 2022 · France</div>
+      </div>
+      <div class="employer-title">Digital Project Manager – Internal Platforms</div>
+      <div class="mission-block">
+        <ul class="bullets">
+          <li>Managed digital platforms (AEM, SharePoint) and coordinated internal stakeholders across business lines</li>
+          <li>Produced editorial content and internal communication materials for a global professional services firm</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="employer-block">
+      <div class="employer-line">
+        <div class="employer-name">Nannuka – Digital Marketing Internship</div>
+        <div class="employer-period">2019 · Athens, Greece</div>
+      </div>
+      <div class="employer-title">Digital Marketing Officer · Erasmus Placement</div>
+      <div class="mission-block">
+        <ul class="bullets">
+          <li>Managed digital marketing and social media for a tech-enabled childcare services platform</li>
+          <li>Conducted competitive market analysis and built content strategy to grow brand awareness internationally</li>
+          <li>Operated autonomously in an English-speaking startup environment abroad</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <div class="skill-cat">Client &amp; Stakeholder Mgmt</div>
+        <div class="skill-val">Senior stakeholder engagement, Executive presentations, Needs assessment, Proposal writing, Relationship building</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Business Development</div>
+        <div class="skill-val">Market analysis, Value proposition articulation, Competitive intelligence, RFP/RFQ management</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Tech &amp; Digital</div>
+        <div class="skill-val">Microsoft 365 (Copilot, SharePoint, Teams), SAP, Digital transformation, AI adoption, SaaS platforms</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Project Management</div>
+        <div class="skill-val">Agile / Waterfall, Cross-functional coordination, Reporting, Risk management, KPI tracking</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Languages</div>
+        <div class="skill-val">French (native) · English (C1 – professional, international projects) · Spanish (notions)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Education</div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-name">Master's Degree – Digital Marketing &amp; Data Analytics</div>
+        <div class="edu-school">EMLV · IIM Digital School, Paris</div>
+      </div>
+      <div class="edu-date">2021</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-name">Erasmus Exchange Programme</div>
+        <div class="edu-school">HEI VD – Haute École d'Ingénierie et de Gestion, Lausanne, Switzerland</div>
+      </div>
+      <div class="edu-date">2018 – 2019</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">Certifications</div>
+    <div class="cert-item">
+      <div>
+        <div class="cert-name">Implementing Microsoft 365 Copilot</div>
+        <div class="cert-org">Microsoft Learn</div>
+      </div>
+      <div class="cert-date">Aug. 2026</div>
+    </div>
+    <div class="cert-item">
+      <div>
+        <div class="cert-name">Introduction to AI and Generative Agents</div>
+        <div class="cert-org">Microsoft Learn</div>
+      </div>
+      <div class="cert-date">Jun. 2026</div>
+    </div>
+    <div class="cert-item">
+      <div>
+        <div class="cert-name">Business Analyst Certification</div>
+        <div class="cert-org">Capgemini · Business Analysis Global Community</div>
+      </div>
+      <div class="cert-date">Sep. 2023</div>
+    </div>
+    <div class="cert-item">
+      <div>
+        <div class="cert-name">Leading Change Successfully</div>
+        <div class="cert-org">ESSEC Business School · Coursera</div>
+      </div>
+      <div class="cert-date">Oct. 2022</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
